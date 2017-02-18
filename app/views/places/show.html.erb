@@ -9,7 +9,7 @@
     <script>
 
       function initMap() {
-        var myLatLng = {lat: 37.783536, lng: -122.4213926};
+        var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
 
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
