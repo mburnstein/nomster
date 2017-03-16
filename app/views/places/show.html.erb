@@ -5,10 +5,13 @@
   <br/><br/>
   <p><%= @place.description %></p>
   <br />
-  <%= @place.photos.first %>
+  <% @place.photos.each do |photo| %>
+      <%= image_tag photo.picture %>
+      <%= photo.caption %>
+  <% end %>
 
 
-  <!-- Modal -->
+  <!--Modal -->
       <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -125,11 +128,13 @@
               <% end %>
               <%= comment.message %> 
             </blockquote>
-            <small><%= comment.user.email %></small>
+            <blockquote>
+              <small><%= comment.user.email %></small>
             </blockquote>
           </div>
         <% end %>
-      </div>
+     </div>
+
       
 
   
