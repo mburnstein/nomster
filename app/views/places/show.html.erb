@@ -6,7 +6,7 @@
   <p><%= @place.description %></p>
   <br />
   <% @place.photos.each do |photo| %>
-      <%= image_tag photo.picture %>
+      <%= image_tag photo.picture, class: 'img-fluid'%>
       <%= photo.caption %>
   <% end %>
 
